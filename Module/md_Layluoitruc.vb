@@ -64,7 +64,7 @@ Module md_Layluoitruc
                 Next
             Next
 
-
+            
             trucchung = danhSachTruc
 
             tr.Commit()

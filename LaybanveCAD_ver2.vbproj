@@ -98,10 +98,16 @@
     <Compile Include="Form\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Nhapsolieudam.Designer.vb">
-      <DependentUpon>Nhapsolieudam.vb</DependentUpon>
+    <Compile Include="Form\Nhapkichthuoccot.Designer.vb">
+      <DependentUpon>Nhapkichthuoccot.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form\Nhapsolieudam.vb">
+    <Compile Include="Form\Nhapkichthuoccot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Nhapkichthuocdam.Designer.vb">
+      <DependentUpon>Nhapkichthuocdam.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Nhapkichthuocdam.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\Main.vb" />
@@ -137,8 +143,11 @@
     <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Nhapsolieudam.resx">
-      <DependentUpon>Nhapsolieudam.vb</DependentUpon>
+    <EmbeddedResource Include="Form\Nhapkichthuoccot.resx">
+      <DependentUpon>Nhapkichthuoccot.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Nhapkichthuocdam.resx">
+      <DependentUpon>Nhapkichthuocdam.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

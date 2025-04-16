@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Nhapsolieudam
+Partial Class Nhapkichthuocdam
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -83,7 +83,7 @@ Partial Class Nhapsolieudam
         Me.btnOK.Text = "OK"
         Me.btnOK.UseVisualStyleBackColor = True
         '
-        'Nhapsolieudam
+        'Nhapkichthuocdam
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -94,7 +94,7 @@ Partial Class Nhapsolieudam
         Me.Controls.Add(Me.txtCao)
         Me.Controls.Add(Me.txtRong)
         Me.Controls.Add(Me.lbLoaidam)
-        Me.Name = "Nhapsolieudam"
+        Me.Name = "Nhapkichthuocdam"
         Me.Text = "Nhapsolieudam"
         Me.ResumeLayout(False)
         Me.PerformLayout()

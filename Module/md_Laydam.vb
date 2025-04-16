@@ -41,7 +41,7 @@ Module md_Laydam
             Next
             Dim loaidam = strten.Distinct().ToList
             For Each a In loaidam
-                Dim dlg As New Nhapsolieudam
+                Dim dlg As New Nhapkichthuocdam
                 dlg.lbLoaidam.Text = a
                 dlg.ShowDialog()
             Next
