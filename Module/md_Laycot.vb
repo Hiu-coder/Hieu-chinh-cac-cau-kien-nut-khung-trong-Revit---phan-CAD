@@ -5,11 +5,7 @@ Imports Autodesk.AutoCAD.Geometry
 
 Module md_Laycot
     Public Sub LayCot()
-        Dim ppr As PromptSelectionResult = ed.GetSelection()
-        If ppr.Status <> PromptStatus.OK Then
-            ed.WriteMessage("\nKhông có đối tượng nào được chọn.")
-            Return
-        End If
+
         Dim Cots As New List(Of BlockReference)()
 
         Using tr As Transaction = db.TransactionManager.StartTransaction()

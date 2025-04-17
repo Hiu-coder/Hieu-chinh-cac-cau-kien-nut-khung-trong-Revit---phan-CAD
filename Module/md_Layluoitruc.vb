@@ -6,15 +6,7 @@ Imports Autodesk.AutoCAD.Geometry
 
 Module md_Layluoitruc
     Public Sub LayLuoiTruc()
-        Dim doc As Document = Application.DocumentManager.MdiActiveDocument
-        Dim db As Database = doc.Database
-        Dim ed As Editor = doc.Editor
 
-        ' Chọn các đường thẳng
-        Dim pso As New PromptSelectionOptions()
-        pso.MessageForAdding = "Chọn các đường thẳng lưới trục:"
-        Dim psr As PromptSelectionResult = ed.GetSelection(pso)
-        If psr.Status <> PromptStatus.OK Then Return
 
         ' Khởi tạo đối tượng lưu trữ lưới trục
 
@@ -24,7 +16,7 @@ Module md_Layluoitruc
             Dim indexNgang As Integer = 1
             Dim indexDoc As Integer = 1
 
-            For Each id As ObjectId In psr.Value.GetObjectIds()
+            For Each id As ObjectId In ppr.Value.GetObjectIds()
                 Dim ent As Entity = TryCast(tr.GetObject(id, OpenMode.ForRead), Entity)
                 If TypeOf ent Is Line AndAlso ent.Layer.ToUpper().Contains("TRUC") Then
                     Dim line As Line = DirectCast(ent, Line)
@@ -69,7 +61,7 @@ Module md_Layluoitruc
 
             tr.Commit()
         End Using
-        ed.WriteMessage(vbLf & "Xuất dữ liệu lưới trục và điểm giao thành công: " & filePath)
+        ed.WriteMessage(vbLf & "Xuất dữ liệu lưới trục và điểm giao thành công: ")
     End Sub
 End Module
 

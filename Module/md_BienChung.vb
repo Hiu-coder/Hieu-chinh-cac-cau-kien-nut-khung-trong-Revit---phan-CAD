@@ -10,4 +10,5 @@ Module md_BienChung
     Public filePath As String
     Public trucchung As List(Of Line)
     Public matbang As New cls_Matbang
+    Public ppr As PromptSelectionResult
 End Module

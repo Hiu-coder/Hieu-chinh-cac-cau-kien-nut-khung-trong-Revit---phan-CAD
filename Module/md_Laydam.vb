@@ -10,12 +10,6 @@ Imports Autodesk.AutoCAD.Runtime
 Module md_Laydam
 
     Public Sub LayDam()
-        Dim ppr As PromptSelectionResult = ed.GetSelection()
-        If ppr.Status <> PromptStatus.OK Then
-            ed.WriteMessage("\nKhông có đối tượng nào được chọn.")
-            Return
-        End If
-
 
         Using tr As Transaction = db.TransactionManager.StartTransaction()
 
@@ -47,7 +41,7 @@ Module md_Laydam
             Next
             For Each trucxet In trucchung
                 Dim tamtruc As New Point3d((trucxet.StartPoint.X + trucxet.EndPoint.X) / 2, (trucxet.StartPoint.Y + trucxet.EndPoint.Y) / 2, 0)
-                ed.WriteMessage(vbCrLf & $"--- Đang xử lý trục : {trucxet.StartPoint} -> {trucxet.EndPoint}")
+                'ed.WriteMessage(vbCrLf & $"--- Đang xử lý trục : {trucxet.StartPoint} -> {trucxet.EndPoint}")
                 Dim damphai As New List(Of Line)
                 Dim damtrai As New List(Of Line)
                 For Each dam In beamLines
@@ -55,19 +49,19 @@ Module md_Laydam
 
                         If (dam.StartPoint.Y - trucxet.StartPoint.Y) > 0 Then
                             damphai.Add(dam)
-                            ed.WriteMessage(vbCrLf & $"--- dầm phải thêm : {dam.StartPoint} -> {dam.EndPoint}")
+                            'ed.WriteMessage(vbCrLf & $"--- dầm phải thêm : {dam.StartPoint} -> {dam.EndPoint}")
                         ElseIf (dam.StartPoint.Y - trucxet.StartPoint.Y) < 0 Then
                             damtrai.Add(dam)
-                            ed.WriteMessage(vbCrLf & $"--- dầm trái thêm : {dam.StartPoint} -> {dam.EndPoint}")
+                            'ed.WriteMessage(vbCrLf & $"--- dầm trái thêm : {dam.StartPoint} -> {dam.EndPoint}")
                         End If
                     ElseIf Ktrass(dam, trucxet) = True And Math.Abs(dam.StartPoint.X - trucxet.StartPoint.X) < 500 And Math.Abs(trucxet.StartPoint.X - trucxet.EndPoint.X) < 0.01 Then
 
                         If (dam.StartPoint.X - trucxet.StartPoint.X) > 0 Then
                             damphai.Add(dam)
-                            ed.WriteMessage(vbCrLf & $"--- dầm phải thêm : {dam.StartPoint} -> {dam.EndPoint}")
+                            'ed.WriteMessage(vbCrLf & $"--- dầm phải thêm : {dam.StartPoint} -> {dam.EndPoint}")
                         ElseIf (dam.StartPoint.X - trucxet.StartPoint.X) < 0 Then
                             damtrai.Add(dam)
-                            ed.WriteMessage(vbCrLf & $"--- dầm trái thêm : {dam.StartPoint} -> {dam.EndPoint}")
+                            'ed.WriteMessage(vbCrLf & $"--- dầm trái thêm : {dam.StartPoint} -> {dam.EndPoint}")
                         End If
                     End If
                 Next
