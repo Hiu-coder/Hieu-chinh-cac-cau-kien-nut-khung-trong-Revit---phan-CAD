@@ -43,7 +43,8 @@ Module md_Laycot
                                {
                                .Diemdat = New cls_Diem With {.X = vitri.X, .Y = vitri.Y, .Z = vitri.Z},
                                .Ten = haha.Ten,
-                               .Lechgiaotruc = New cls_Lech With {.X = Math.Abs(vitri.X - diemgiaotruc.X), .Y = Math.Abs(vitri.Y - diemgiaotruc.Y)}
+                               .Lechgiaotruc = New cls_Lech With {.X = Math.Abs(vitri.X - diemgiaotruc.X), .Y = Math.Abs(vitri.Y - diemgiaotruc.Y)},
+                               .Goc = cot.Rotation
                               })
             Next
 

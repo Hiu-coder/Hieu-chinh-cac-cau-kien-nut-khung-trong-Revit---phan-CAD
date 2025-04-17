@@ -338,139 +338,150 @@
     <Rộng>220</Rộng>
   </CácLoạiDầm>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
-      <X>0</X>
-      <Y>42.276370437797596</Y>
+      <X>1.4210854715202004E-14</X>
+      <Y>40.0000204377958</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
-      <X>0</X>
-      <Y>42.276370437797596</Y>
+      <X>1.4210854715202004E-14</X>
+      <Y>40.0000204377958</Y>
     </Lechgiaotruc>
+    <Goc>1.5707963267948966</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
       <X>3000</X>
-      <Y>42.276370437797596</Y>
+      <Y>40.0000204377958</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
       <X>0</X>
-      <Y>42.276370437797596</Y>
+      <Y>40.0000204377958</Y>
     </Lechgiaotruc>
+    <Goc>1.5707963267948966</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
       <X>8999.9999999999891</X>
-      <Y>42.276370437797596</Y>
+      <Y>40.0000204377958</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
       <X>0</X>
-      <Y>42.276370437797596</Y>
+      <Y>40.0000204377958</Y>
     </Lechgiaotruc>
+    <Goc>1.5707963267948966</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
       <X>9999.9999999999545</X>
-      <Y>9957.723629562206</Y>
+      <Y>9959.9999795622043</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
       <X>9.0949470177292824E-12</X>
-      <Y>42.276370437793958</Y>
+      <Y>40.000020437795683</Y>
     </Lechgiaotruc>
+    <Goc>1.5707963267948966</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
-      <X>5999.9999999999527</X>
-      <Y>9957.723629562206</Y>
+      <X>5999.9999999999509</X>
+      <Y>9959.9999795622043</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
-      <X>7.2759576141834259E-12</X>
-      <Y>42.276370437793958</Y>
+      <X>5.4569682106375694E-12</X>
+      <Y>40.000020437795683</Y>
     </Lechgiaotruc>
+    <Goc>1.5707963267948966</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
       <X>3000</X>
-      <Y>9957.723629562206</Y>
+      <Y>9959.9999795622043</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
       <X>0</X>
-      <Y>42.276370437793958</Y>
+      <Y>40.000020437795683</Y>
     </Lechgiaotruc>
+    <Goc>1.5707963267948966</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
-      <X>0</X>
-      <Y>9957.723629562206</Y>
+      <X>-9.18485224505921E-15</X>
+      <Y>9959.9999795622043</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
-      <X>0</X>
-      <Y>42.276370437793958</Y>
+      <X>9.18485224505921E-15</X>
+      <Y>40.000020437795683</Y>
     </Lechgiaotruc>
+    <Goc>1.5707963267948966</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
-      <X>42.276370437797596</X>
+      <X>40.0000204377958</X>
       <Y>4000</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
-      <X>42.276370437797596</X>
+      <X>40.0000204377958</X>
       <Y>0</Y>
     </Lechgiaotruc>
+    <Goc>0</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
-      <X>42.276370437797596</X>
-      <Y>7000.0000000000009</Y>
+      <X>40.0000204377958</X>
+      <Y>6997.723649999999</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
-      <X>42.276370437797596</X>
-      <Y>9.0949470177292824E-13</Y>
+      <X>40.0000204377958</X>
+      <Y>2.2763500000010026</Y>
     </Lechgiaotruc>
+    <Goc>0</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
-      <X>8957.7236295621951</X>
+      <X>8959.9999795621934</X>
       <Y>4000</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
-      <X>42.276370437793958</X>
+      <X>40.000020437795683</X>
       <Y>0</Y>
     </Lechgiaotruc>
+    <Goc>0</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C2</Ten>
+    <Ten>C2 (30x22)</Ten>
     <Diemdat>
-      <X>9957.7236295621951</X>
+      <X>9959.9999795621916</X>
       <Y>7000</Y>
       <Z>0</Z>
     </Diemdat>
     <Lechgiaotruc>
-      <X>42.2763704377503</X>
+      <X>40.000020437753847</X>
       <Y>0</Y>
     </Lechgiaotruc>
+    <Goc>0</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C1</Ten>
+    <Ten>C1 (22x22)</Ten>
     <Diemdat>
       <X>3000</X>
       <Y>4000</Y>
@@ -480,9 +491,10 @@
       <X>0</X>
       <Y>0</Y>
     </Lechgiaotruc>
+    <Goc>0</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C1</Ten>
+    <Ten>C1 (22x22)</Ten>
     <Diemdat>
       <X>8999.9999999999891</X>
       <Y>7000</Y>
@@ -492,9 +504,10 @@
       <X>0</X>
       <Y>0</Y>
     </Lechgiaotruc>
+    <Goc>0</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C1</Ten>
+    <Ten>C1 (22x22)</Ten>
     <Diemdat>
       <X>5999.9999999999873</X>
       <Y>7000</Y>
@@ -504,9 +517,10 @@
       <X>4.18367562815547E-11</X>
       <Y>0</Y>
     </Lechgiaotruc>
+    <Goc>0</Goc>
   </DanhSáchCột>
   <DanhSáchCột>
-    <Ten>C1</Ten>
+    <Ten>C1 (22x22)</Ten>
     <Diemdat>
       <X>3000</X>
       <Y>7000</Y>
@@ -516,16 +530,17 @@
       <X>0</X>
       <Y>0</Y>
     </Lechgiaotruc>
+    <Goc>0</Goc>
   </DanhSáchCột>
   <CácLoạiCot>
-    <Tên>C2</Tên>
-    <Cao>200</Cao>
-    <Rộng>200</Rộng>
+    <Tên>C2 (30x22)</Tên>
+    <Cao>220</Cao>
+    <Rộng>300</Rộng>
   </CácLoạiCot>
   <CácLoạiCot>
-    <Tên>C1</Tên>
-    <Cao>300</Cao>
-    <Rộng>200</Rộng>
+    <Tên>C1 (22x22)</Tên>
+    <Cao>220</Cao>
+    <Rộng>220</Rộng>
   </CácLoạiCot>
   <LướiTrục>
     <TrucDoc>

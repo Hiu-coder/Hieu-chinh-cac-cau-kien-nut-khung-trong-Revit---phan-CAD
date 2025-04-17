@@ -13,6 +13,9 @@ Public Class cls_Cot
     Public Property Diemdat As cls_Diem
     <XmlElement("Lechgiaotruc")>
     Public Property Lechgiaotruc As cls_Lech
+    <XmlElement("Goc")>
+    Public Property Goc As Double
+
 End Class
 <Serializable>
 Public Class cls_LoaiCot
