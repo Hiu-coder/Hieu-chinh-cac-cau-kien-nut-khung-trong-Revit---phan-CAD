@@ -4,9 +4,13 @@ Imports System.Xml.Serialization
 <XmlRoot("-----------MặtBằng-----------")>
 Public Class cls_Matbang
     <XmlElement("Tầng")>
-    Public Property Tang As Double
+    Public Property Tang As Integer
     <XmlElement("CaoĐộ")>
     Public Property CaoDo As Double
+    <XmlElement("TầngKetThuc")>
+    Public Property TangKT As Integer
+    <XmlElement("CaoĐộKetThuc")>
+    Public Property CaoDoKT As Double
     <XmlElement("DanhSáchDầm")>
     Public Property DSDam As List(Of cls_Dam)
     <XmlElement("CácLoạiDầm")>

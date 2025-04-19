@@ -14,8 +14,11 @@ Public Class MainForm
         End If
         md_Layluoitruc.LayLuoiTruc()
         md_Laydam.LayDam()
+        Dim dlgkt As New Chontangketthuccuacot
+        dlgkt.ShowDialog()
         md_Laycot.LayCot()
         md_Xml.Ghixml("D:\NCKH\LaybanveCAD_ver2\MATBANG.xml", matbang)
         ed.WriteMessage(vbLf & "Xuất dữ liệu thành công")
     End Sub
+
 End Class
