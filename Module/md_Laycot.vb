@@ -4,7 +4,7 @@ Imports Autodesk.AutoCAD.EditorInput
 Imports Autodesk.AutoCAD.Geometry
 
 Module md_Laycot
-    Public Sub LayCot()
+    Public Sub LayCot(matbang As cls_Matbang)
 
         Dim Cots As New List(Of BlockReference)()
 
@@ -20,10 +20,16 @@ Module md_Laycot
                 strten.Add(t.Name)
             Next
             Dim loaicot = strten.Distinct().ToList
-            For Each a In loaicot
-                Dim dlg As New Nhapkichthuoccot
-                dlg.lbLoaiCot.Text = a
-                dlg.ShowDialog()
+            For Each item In loaicot
+                ' Lấy phần trong dấu ngoặc
+                Dim phanNgoac = item.Substring(item.IndexOf("(") + 1)
+                phanNgoac = phanNgoac.Replace(")", "") ' bỏ dấu )
+
+                ' Tách b và h
+                Dim kichthuoc = phanNgoac.Split("x"c)
+                Dim b = Convert.ToDouble(kichthuoc(0))
+                Dim h = Convert.ToDouble(kichthuoc(1))
+                matbang.LoaiCot.Add(New cls_LoaiCot With {.Ten = item, .Rong = b, .Cao = h})
             Next
             For Each cot In Cots
                 Dim haha As cls_LoaiCot = matbang.LoaiCot.FirstOrDefault(Function(x) x.Ten = cot.Name)

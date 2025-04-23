@@ -9,14 +9,21 @@ Imports Autodesk.AutoCAD.Runtime
 
 Module md_Laydam
 
-    Public Sub LayDam()
+    Public Sub LayDam(matbang As cls_Matbang)
 
         Using tr As Transaction = db.TransactionManager.StartTransaction()
 
             Dim beamLines As New List(Of Line)()
             Dim tendam As New List(Of DBText)
+            'Dim pp As PromptSelectionResult
+            'Dim ps As New PromptSelectionOptions()
+            'ps.MessageForAdding = "Chọn cấu kiện DẦM để lấy Layer:"
+            'pp = ed.GetSelection(ps)
+            'If pp.Status <> PromptStatus.OK Then
+            '    ed.WriteMessage("\nKhông có đối tượng nào được chọn.")
+            '    Return
+            'End If
 
-            ' Lấy tất cả các Line có layer "DAM"
             For Each selObj As SelectedObject In ppr.Value
                 Dim ent As Entity = TryCast(tr.GetObject(selObj.ObjectId, OpenMode.ForRead), Entity)
                 If TypeOf ent Is Line AndAlso ent.Layer = "DAM" Then
@@ -34,10 +41,16 @@ Module md_Laydam
                 strten.Add(t.TextString)
             Next
             Dim loaidam = strten.Distinct().ToList
-            For Each a In loaidam
-                Dim dlg As New Nhapkichthuocdam
-                dlg.lbLoaidam.Text = a
-                dlg.ShowDialog()
+            For Each item In loaidam
+                ' Lấy phần trong dấu ngoặc
+                Dim phanNgoac = item.Substring(item.IndexOf("(") + 1)
+                phanNgoac = phanNgoac.Replace(")", "") ' bỏ dấu )
+
+                ' Tách b và h
+                Dim kichthuoc = phanNgoac.Split("x"c)
+                Dim b = Convert.ToDouble(kichthuoc(0))
+                Dim h = Convert.ToDouble(kichthuoc(1))
+                matbang.LoaiDam.Add(New cls_LoaiDam With {.Ten = item, .Rong = b, .Cao = h})
             Next
             For Each trucxet In trucchung
                 Dim tamtruc As New Point3d((trucxet.StartPoint.X + trucxet.EndPoint.X) / 2, (trucxet.StartPoint.Y + trucxet.EndPoint.Y) / 2, 0)

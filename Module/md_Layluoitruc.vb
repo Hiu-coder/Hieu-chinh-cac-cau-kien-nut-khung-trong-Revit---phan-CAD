@@ -5,7 +5,7 @@ Imports Autodesk.AutoCAD.EditorInput
 Imports Autodesk.AutoCAD.Geometry
 
 Module md_Layluoitruc
-    Public Sub LayLuoiTruc()
+    Public Sub LayLuoiTruc(matbang As cls_Matbang)
 
 
         ' Khởi tạo đối tượng lưu trữ lưới trục
@@ -56,7 +56,7 @@ Module md_Layluoitruc
                 Next
             Next
 
-            
+
             trucchung = danhSachTruc
 
             tr.Commit()

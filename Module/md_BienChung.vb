@@ -9,6 +9,6 @@ Module md_BienChung
     Public ed As Editor = doc.Editor
     Public filePath As String
     Public trucchung As List(Of Line)
-    Public matbang As New cls_Matbang
+    Public congtrinh As New cls_CongTrinh
     Public ppr As PromptSelectionResult
 End Module

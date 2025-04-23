@@ -1,6 +1,14 @@
 ﻿Imports Autodesk.AutoCAD.Geometry
 Imports System.Xml.Serialization
 <Serializable>
+Public Class cls_CongTrinh
+    <XmlElement("MatBang")>
+    Public Property CongTrinh As List(Of cls_Matbang)
+    Public Sub New()
+        CongTrinh = New List(Of cls_Matbang)
+    End Sub
+End Class
+<Serializable>
 <XmlRoot("-----------MặtBằng-----------")>
 Public Class cls_Matbang
     <XmlElement("Tầng")>

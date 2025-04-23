@@ -86,34 +86,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form\Chonnoichuaxml.Designer.vb">
-      <DependentUpon>Chonnoichuaxml.vb</DependentUpon>
+    <Compile Include="Form\Chontangketthuc.Designer.vb">
+      <DependentUpon>Chontangketthuc.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form\Chonnoichuaxml.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Chontangketthuccuacot.Designer.vb">
-      <DependentUpon>Chontangketthuccuacot.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Chontangketthuccuacot.vb">
+    <Compile Include="Form\Chontangketthuc.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\MainForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Nhapkichthuoccot.Designer.vb">
-      <DependentUpon>Nhapkichthuoccot.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Nhapkichthuoccot.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Nhapkichthuocdam.Designer.vb">
-      <DependentUpon>Nhapkichthuocdam.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Nhapkichthuocdam.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\Main.vb" />
@@ -143,20 +125,11 @@
     <Compile Include="OPP\cls_Matbang.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form\Chonnoichuaxml.resx">
-      <DependentUpon>Chonnoichuaxml.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Chontangketthuccuacot.resx">
-      <DependentUpon>Chontangketthuccuacot.vb</DependentUpon>
+    <EmbeddedResource Include="Form\Chontangketthuc.resx">
+      <DependentUpon>Chontangketthuc.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Nhapkichthuoccot.resx">
-      <DependentUpon>Nhapkichthuoccot.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Nhapkichthuocdam.resx">
-      <DependentUpon>Nhapkichthuocdam.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
