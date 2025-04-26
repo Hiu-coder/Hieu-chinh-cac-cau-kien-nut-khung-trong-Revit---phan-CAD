@@ -52,29 +52,25 @@ Module md_Laydam
                 Dim h = Convert.ToDouble(kichthuoc(1))
                 matbang.LoaiDam.Add(New cls_LoaiDam With {.Ten = item, .Rong = b, .Cao = h})
             Next
-            For Each trucxet In trucchung
+
+            For Each ha In matbang.LuoiTruc.TrucNgang
+                Dim trucxet = ha.Line
                 Dim tamtruc As New Point3d((trucxet.StartPoint.X + trucxet.EndPoint.X) / 2, (trucxet.StartPoint.Y + trucxet.EndPoint.Y) / 2, 0)
-                'ed.WriteMessage(vbCrLf & $"--- Đang xử lý trục : {trucxet.StartPoint} -> {trucxet.EndPoint}")
                 Dim damphai As New List(Of Line)
                 Dim damtrai As New List(Of Line)
                 For Each dam In beamLines
                     If Ktrass(dam, trucxet) = True And Math.Abs(dam.StartPoint.Y - trucxet.StartPoint.Y) < 500 And Math.Abs(trucxet.StartPoint.Y - trucxet.EndPoint.Y) < 0.01 Then
-
                         If (dam.StartPoint.Y - trucxet.StartPoint.Y) > 0 Then
                             damphai.Add(dam)
-                            'ed.WriteMessage(vbCrLf & $"--- dầm phải thêm : {dam.StartPoint} -> {dam.EndPoint}")
                         ElseIf (dam.StartPoint.Y - trucxet.StartPoint.Y) < 0 Then
                             damtrai.Add(dam)
-                            'ed.WriteMessage(vbCrLf & $"--- dầm trái thêm : {dam.StartPoint} -> {dam.EndPoint}")
                         End If
                     ElseIf Ktrass(dam, trucxet) = True And Math.Abs(dam.StartPoint.X - trucxet.StartPoint.X) < 500 And Math.Abs(trucxet.StartPoint.X - trucxet.EndPoint.X) < 0.01 Then
 
                         If (dam.StartPoint.X - trucxet.StartPoint.X) > 0 Then
                             damphai.Add(dam)
-                            'ed.WriteMessage(vbCrLf & $"--- dầm phải thêm : {dam.StartPoint} -> {dam.EndPoint}")
                         ElseIf (dam.StartPoint.X - trucxet.StartPoint.X) < 0 Then
                             damtrai.Add(dam)
-                            'ed.WriteMessage(vbCrLf & $"--- dầm trái thêm : {dam.StartPoint} -> {dam.EndPoint}")
                         End If
                     End If
                 Next
@@ -86,35 +82,60 @@ Module md_Laydam
                     End If
                 Next
                 Dim haha As cls_LoaiDam = matbang.LoaiDam.FirstOrDefault(Function(x) x.Ten = ten)
-                If damphai.Count > damtrai.Count Then
+                Dim l1 = Join(damphai)
+                Dim l2 = Join(damtrai)
+                matbang.DSDam.Add(New cls_Dam With {
+                                         .Loaidam = haha,
+                                         .Trucxet = ha.Ten,
+                                         .LechTrucX1 = (ha.Line.StartPoint.X - l1.StartPoint.X),
+                                         .LechTrucX2 = (ha.Line.EndPoint.X - l1.EndPoint.X),
+                                         .LechTrucY1 = (ha.Line.StartPoint.Y - l1.StartPoint.Y),
+                                         .LechTrucY2 = (ha.Line.EndPoint.Y - l1.EndPoint.Y)
+                                         })
 
-                    For Each dp In damphai
-
-
-                        Dim dau = Tinhtoadotamtruc(dp, damtrai.First, 1)
-                        Dim cuoi = Tinhtoadotamtruc(dp, damtrai.First, 2)
-                        matbang.DSDam.Add(New cls_Dam With {
-                                    .Ten = ten,
-                                    .Dau = New cls_Diem() With {.X = dau.X, .Y = dau.Y, .Z = dau.Z},
-                                    .Cuoi = New cls_Diem() With {.X = cuoi.X, .Y = cuoi.Y, .Z = cuoi.Z},
-                                    .Cao = haha.Cao,
-                                    .Rong = Math.Abs(dp.StartPoint.Y - damtrai.First.StartPoint.Y),
-                                    .LechTruc = Math.Abs((Math.Abs(dp.StartPoint.Y - damtrai.First.StartPoint.Y) / 2) - Math.Abs(trucxet.StartPoint.Y - dp.StartPoint.Y))})
-                    Next
-                Else
-                    For Each dt In damtrai
-                        Dim dau = Tinhtoadotamtruc(dt, damphai.First, 1)
-                        Dim cuoi = Tinhtoadotamtruc(dt, damphai.First, 2)
-                        matbang.DSDam.Add(New cls_Dam With {
-                                    .Ten = ten,
-                                    .Dau = New cls_Diem() With {.X = dau.X, .Y = dau.Y, .Z = dau.Z},
-                                    .Cuoi = New cls_Diem() With {.X = cuoi.X, .Y = cuoi.Y, .Z = cuoi.Z},
-                                    .Cao = haha.Cao,
-                                    .Rong = Math.Abs(dt.StartPoint.Y - damphai.First.StartPoint.Y),
-                                    .LechTruc = Math.Abs((dt.StartPoint.Y + damphai.First.StartPoint.Y) / 2 - trucxet.StartPoint.Y)})
-                    Next
-                End If
             Next
+            For Each ha In matbang.LuoiTruc.TrucDoc
+                Dim trucxet = ha.Line
+                Dim tamtruc As New Point3d((trucxet.StartPoint.X + trucxet.EndPoint.X) / 2, (trucxet.StartPoint.Y + trucxet.EndPoint.Y) / 2, 0)
+                Dim damphai As New List(Of Line)
+                Dim damtrai As New List(Of Line)
+                For Each dam In beamLines
+                    If Ktrass(dam, trucxet) = True And Math.Abs(dam.StartPoint.Y - trucxet.StartPoint.Y) < 500 And Math.Abs(trucxet.StartPoint.Y - trucxet.EndPoint.Y) < 0.01 Then
+                        If (dam.StartPoint.Y - trucxet.StartPoint.Y) > 0 Then
+                            damphai.Add(dam)
+                        ElseIf (dam.StartPoint.Y - trucxet.StartPoint.Y) < 0 Then
+                            damtrai.Add(dam)
+                        End If
+                    ElseIf Ktrass(dam, trucxet) = True And Math.Abs(dam.StartPoint.X - trucxet.StartPoint.X) < 500 And Math.Abs(trucxet.StartPoint.X - trucxet.EndPoint.X) < 0.01 Then
+
+                        If (dam.StartPoint.X - trucxet.StartPoint.X) > 0 Then
+                            damphai.Add(dam)
+                        ElseIf (dam.StartPoint.X - trucxet.StartPoint.X) < 0 Then
+                            damtrai.Add(dam)
+                        End If
+                    End If
+                Next
+                Dim ten As String
+                For Each td In tendam
+                    Dim kc = td.Position.DistanceTo(tamtruc)
+                    If kc < 3000 Then
+                        ten = td.TextString
+                    End If
+                Next
+                Dim haha As cls_LoaiDam = matbang.LoaiDam.FirstOrDefault(Function(x) x.Ten = ten)
+                Dim l1 = Join(damphai)
+                Dim l2 = Join(damtrai)
+                matbang.DSDam.Add(New cls_Dam With {
+                                         .Loaidam = haha,
+                                         .Trucxet = ha.Ten,
+                                         .LechTrucX1 = (l1.StartPoint.X - ha.Line.StartPoint.X),
+                                         .LechTrucX2 = (l1.EndPoint.X - ha.Line.EndPoint.X),
+                                         .LechTrucY1 = (l1.StartPoint.Y - ha.Line.StartPoint.Y),
+                                         .LechTrucY2 = (l1.EndPoint.Y - ha.Line.EndPoint.Y)
+                                         })
+
+            Next
+
 
             tr.Commit()
             ed.WriteMessage("Hoàn thành lấy dầm")
@@ -170,5 +191,33 @@ Module md_Laydam
         Dim closestPoint As Point3d = line1.GetClosestPointTo(pointOnLine2, False)
         Dim distance As Double = pointOnLine2.DistanceTo(closestPoint)
         Return distance
+    End Function
+    Public Function Join(lines As List(Of Line)) As Line
+
+
+        ' Lấy tất cả điểm đầu và cuối
+        Dim allPoints As New List(Of Point3d)()
+        For Each ln In lines
+            allPoints.Add(ln.StartPoint)
+            allPoints.Add(ln.EndPoint)
+        Next
+
+        ' Tìm 2 điểm xa nhau nhất
+        Dim maxDist As Double = -1
+        Dim pt1 As Point3d = Nothing
+        Dim pt2 As Point3d = Nothing
+
+        For i = 0 To allPoints.Count - 2
+            For j = i + 1 To allPoints.Count - 1
+                Dim dist = allPoints(i).DistanceTo(allPoints(j))
+                If dist > maxDist Then
+                    maxDist = dist
+                    pt1 = allPoints(i)
+                    pt2 = allPoints(j)
+                End If
+            Next
+        Next
+
+        Return New Line(pt1, pt2)
     End Function
 End Module

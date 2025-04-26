@@ -7,12 +7,14 @@ Imports System.Xml.Serialization
 <Serializable>
 <XmlRoot("------")>
 Public Class cls_Cot
-    <XmlElement("Ten")>
-    Public Property Ten As String
-    <XmlElement("Diemdat")>
-    Public Property Diemdat As cls_Diem
-    <XmlElement("Lechgiaotruc")>
-    Public Property Lechgiaotruc As cls_Lech
+    <XmlElement("LoaiCot")>
+    Public Property Loai As cls_LoaiCot
+    <XmlElement("DiemDat")>
+    Public Property Diemdat As String
+    <XmlElement("LechgiaotrucX")>
+    Public Property LechgiaotrucX As Double
+    <XmlElement("LechgiaotrucY")>
+    Public Property LechgiaotrucY As Double
     <XmlElement("Goc")>
     Public Property Goc As Double
 
@@ -29,10 +31,4 @@ Public Class cls_LoaiCot
 
     End Sub
 End Class
-<Serializable>
-Public Class cls_Lech
-    <XmlElement("X")>
-    Public Property X As Double
-    <XmlElement("Y")>
-    Public Property Y As Double
-End Class
+

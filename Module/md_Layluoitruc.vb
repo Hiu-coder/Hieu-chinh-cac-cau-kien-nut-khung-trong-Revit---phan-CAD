@@ -10,7 +10,6 @@ Module md_Layluoitruc
 
         ' Khởi tạo đối tượng lưu trữ lưới trục
 
-        Dim danhSachTruc As New List(Of Line)()
 
         Using tr As Transaction = db.TransactionManager.StartTransaction()
             Dim indexNgang As Integer = 1
@@ -20,15 +19,16 @@ Module md_Layluoitruc
                 Dim ent As Entity = TryCast(tr.GetObject(id, OpenMode.ForRead), Entity)
                 If TypeOf ent Is Line AndAlso ent.Layer.ToUpper().Contains("TRUC") Then
                     Dim line As Line = DirectCast(ent, Line)
-                    danhSachTruc.Add(line)
+
 
                     ' Kiểm tra trục ngang (song song trục X)
                     If Math.Abs(line.StartPoint.Y - line.EndPoint.Y) < 0.001 Then
                         matbang.LuoiTruc.TrucNgang.Add(New cls_TrucNgang With {
                             .Ten = "N" & indexNgang,
                             .DiemDau = New cls_Diem(line.StartPoint.X, line.StartPoint.Y, line.StartPoint.Z),
-                            .DiemCuoi = New cls_Diem(line.EndPoint.X, line.EndPoint.Y, line.EndPoint.Z)
-                        })
+                            .DiemCuoi = New cls_Diem(line.EndPoint.X, line.EndPoint.Y, line.EndPoint.Z),
+                            .Line = line})
+
                         indexNgang += 1
 
                         ' Kiểm tra trục dọc (song song trục Y)
@@ -36,28 +36,24 @@ Module md_Layluoitruc
                         matbang.LuoiTruc.TrucDoc.Add(New cls_TrucDoc With {
                             .Ten = "D" & indexDoc,
                             .DiemDau = New cls_Diem(line.StartPoint.X, line.StartPoint.Y, line.StartPoint.Z),
-                            .DiemCuoi = New cls_Diem(line.EndPoint.X, line.EndPoint.Y, line.EndPoint.Z)
-                        })
+                            .DiemCuoi = New cls_Diem(line.EndPoint.X, line.EndPoint.Y, line.EndPoint.Z),
+                            .Line = line
+                            })
                         indexDoc += 1
                     End If
                 End If
             Next
 
             ' Tìm các điểm giao nhau giữa trục ngang và trục dọc
-            For Each trucNgang As Line In danhSachTruc
-                If Math.Abs(trucNgang.StartPoint.Y - trucNgang.EndPoint.Y) > 0.001 Then Continue For ' Bỏ qua trục dọc
-
-                For Each trucDoc As Line In danhSachTruc
-                    If Math.Abs(trucDoc.StartPoint.X - trucDoc.EndPoint.X) > 0.001 Then Continue For ' Bỏ qua trục ngang
-
+            For Each trucNgang In matbang.LuoiTruc.TrucNgang
+                Dim tn = trucNgang.Line
+                For Each trucDoc In matbang.LuoiTruc.TrucDoc
+                    Dim td = trucDoc.Line
                     ' Tính giao điểm
-                    Dim giaoDiem As New cls_Diem(trucDoc.StartPoint.X, trucNgang.StartPoint.Y, 0)
-                    matbang.LuoiTruc.DiemGiao.Add(giaoDiem)
+                    Dim giaoDiem As New Point3d(td.StartPoint.X, tn.StartPoint.Y, 0)
+                    matbang.LuoiTruc.DiemGiao.Add(New cls_DiemGiao With {.Ten = trucNgang.Ten + trucDoc.Ten, .Toado = giaoDiem})
                 Next
             Next
-
-
-            trucchung = danhSachTruc
 
             tr.Commit()
         End Using

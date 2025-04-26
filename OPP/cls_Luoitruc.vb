@@ -1,6 +1,6 @@
 ﻿Imports Autodesk.AutoCAD.Geometry
 Imports System.Xml.Serialization
-
+Imports Autodesk.AutoCAD.DatabaseServices
 <Serializable>
 <XmlRoot("LuoiTruc")>
 Public Class cls_LuoiTruc
@@ -8,17 +8,19 @@ Public Class cls_LuoiTruc
     Public Property TrucDoc As List(Of cls_TrucDoc)
     <XmlElement("TrucNgang")>
     Public Property TrucNgang As List(Of cls_TrucNgang)
-    <XmlElement("DiemGiao")>
-    Public Property DiemGiao As List(Of cls_Diem)
+    Public Property DiemGiao As List(Of cls_DiemGiao)
 
     ' Constructor để tránh lỗi null khi khởi tạo
     Public Sub New()
         TrucDoc = New List(Of cls_TrucDoc)()
         TrucNgang = New List(Of cls_TrucNgang)()
-        DiemGiao = New List(Of cls_Diem)()
+        DiemGiao = New List(Of cls_DiemGiao)
     End Sub
 End Class
-
+Public Class cls_DiemGiao
+    Public Property Ten As String
+    Public Property Toado As Point3d
+End Class
 Public Class cls_TrucNgang
     <XmlElement("Ten")>
     Public Property Ten As String
@@ -26,6 +28,8 @@ Public Class cls_TrucNgang
     Public Property DiemDau As cls_Diem
     <XmlElement("DiemCuoi")>
     Public Property DiemCuoi As cls_Diem
+    <XmlIgnore>
+    Public Property Line As Line
 End Class
 
 Public Class cls_TrucDoc
@@ -35,6 +39,8 @@ Public Class cls_TrucDoc
     Public Property DiemDau As cls_Diem
     <XmlElement("DiemCuoi")>
     Public Property DiemCuoi As cls_Diem
+    <XmlIgnore>
+    Public Property Line As Line
 End Class
 
 Public Class cls_Diem

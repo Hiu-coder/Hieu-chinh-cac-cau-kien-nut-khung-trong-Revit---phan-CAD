@@ -43,9 +43,7 @@ Public Class MainForm
 
 
             dtgvCaukien.DataSource = haha.DSDam
-            dtgvCaukien.Columns("Dau").Visible = False
-            dtgvCaukien.Columns("Cuoi").Visible = False
-            dtgvCaukien.Columns("LechTruc").Visible = False
+
             dtgvLoai.DataSource = haha.LoaiDam
             If Not dtgvCaukien.Columns.Contains("STT") Then
                 Dim sttCol As New DataGridViewTextBoxColumn()
@@ -70,9 +68,7 @@ Public Class MainForm
 
 
             dtgvCaukien.DataSource = haha.DSCot
-            dtgvCaukien.Columns("Diemdat").Visible = False
-            dtgvCaukien.Columns("Lechgiaotruc").Visible = False
-            dtgvCaukien.Columns("Goc").Visible = False
+
             dtgvLoai.DataSource = haha.LoaiCot
             If Not dtgvCaukien.Columns.Contains("STT") Then
                 Dim sttCol As New DataGridViewTextBoxColumn()

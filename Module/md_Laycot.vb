@@ -34,20 +34,17 @@ Module md_Laycot
             For Each cot In Cots
                 Dim haha As cls_LoaiCot = matbang.LoaiCot.FirstOrDefault(Function(x) x.Ten = cot.Name)
                 Dim vitri = cot.Position
-                Dim diemgiaotruc As cls_Diem = Nothing
-                Dim giao = matbang.LuoiTruc.DiemGiao
-                For Each diemgiao In giao
-                    If Math.Abs(vitri.X - diemgiao.X) < 200 And Math.Abs(vitri.Y - diemgiao.Y) < 200 Then
-                        diemgiaotruc = diemgiao
+                For Each l In matbang.LuoiTruc.DiemGiao
+                    If Math.Abs(l.Toado.X - vitri.X) < 300 And Math.Abs(l.Toado.Y - vitri.Y) < 300 Then
+                        matbang.DSCot.Add(New cls_Cot With {
+                                          .Loai = haha,
+                                          .Diemdat = l.Ten,
+                                          .Goc = cot.Rotation,
+                                          .LechgiaotrucX = l.Toado.X - vitri.X,
+                                          .LechgiaotrucY = l.Toado.Y - vitri.Y
+                                          })
                     End If
                 Next
-                matbang.DSCot.Add(New cls_Cot With
-                               {
-                               .Diemdat = New cls_Diem With {.X = vitri.X, .Y = vitri.Y, .Z = vitri.Z},
-                               .Ten = haha.Ten,
-                               .Lechgiaotruc = New cls_Lech With {.X = Math.Abs(vitri.X - diemgiaotruc.X), .Y = Math.Abs(vitri.Y - diemgiaotruc.Y)},
-                               .Goc = cot.Rotation
-                              })
             Next
 
 
