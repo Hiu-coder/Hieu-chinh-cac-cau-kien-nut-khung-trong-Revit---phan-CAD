@@ -8,6 +8,7 @@ Public Class cls_LuoiTruc
     Public Property TrucDoc As List(Of cls_TrucDoc)
     <XmlElement("TrucNgang")>
     Public Property TrucNgang As List(Of cls_TrucNgang)
+    <XmlElement("DiemGiao")>
     Public Property DiemGiao As List(Of cls_DiemGiao)
 
     ' Constructor để tránh lỗi null khi khởi tạo
@@ -18,8 +19,12 @@ Public Class cls_LuoiTruc
     End Sub
 End Class
 Public Class cls_DiemGiao
+    <XmlElement("Ten")>
     Public Property Ten As String
+    <XmlIgnore>
     Public Property Toado As Point3d
+    <XmlElement("ToaDo")>
+    Public Property Toadoxml As cls_Diem
 End Class
 Public Class cls_TrucNgang
     <XmlElement("Ten")>

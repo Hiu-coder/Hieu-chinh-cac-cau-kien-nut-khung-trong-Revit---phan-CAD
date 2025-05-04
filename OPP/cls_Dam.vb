@@ -33,4 +33,7 @@ Public Class cls_LoaiDam
 
     End Sub
 End Class
-
+Public Class cls_DamforDtgv
+    Public Property Loai As String
+    Public Property Trucxet As String
+End Class

@@ -2,8 +2,6 @@
 Imports Autodesk.AutoCAD.Geometry
 Imports System.Xml.Serialization
 
-
-
 <Serializable>
 <XmlRoot("------")>
 Public Class cls_Cot
@@ -31,4 +29,7 @@ Public Class cls_LoaiCot
 
     End Sub
 End Class
-
+Public Class cls_CotforDtgv
+    Public Property Loai As String
+    Public Property DiemDat As String
+End Class

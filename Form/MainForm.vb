@@ -17,6 +17,7 @@ Public Class MainForm
         End If
         Dim dlg As New Chontangketthuc(matbang)
         dlg.Show()
+        dlg.BringToFront()
         md_Layluoitruc.LayLuoiTruc(matbang)
         md_Laydam.LayDam(matbang)
         md_Laycot.LayCot(matbang)
@@ -33,18 +34,20 @@ Public Class MainForm
     Private Sub rdbDam_CheckedChanged(sender As Object, e As EventArgs) Handles rdbDam.CheckedChanged
         Dim haha = congtrinh.CongTrinh.FirstOrDefault(Function(x) ("Tầng " + Convert.ToString(x.Tang)) = cbbMatbang.SelectedItem)
         If rdbDam.Checked = True Then
+            'Clear va gan data cho dtgv
             dtgvCaukien.DataSource = Nothing
             dtgvCaukien.Rows.Clear()
             dtgvCaukien.Columns.Clear()
             dtgvLoai.DataSource = Nothing
             dtgvLoai.Rows.Clear()
             dtgvLoai.Columns.Clear()
-
-
-
-            dtgvCaukien.DataSource = haha.DSDam
-
+            Dim hoho As New List(Of cls_DamforDtgv)
+            For Each hihi In haha.DSDam
+                hoho.Add(New cls_DamforDtgv With {.Loai = hihi.Loaidam.Ten, .Trucxet = hihi.Trucxet})
+            Next
+            dtgvCaukien.DataSource = hoho
             dtgvLoai.DataSource = haha.LoaiDam
+            'tao cot moi va Gán giá trị cho cột STT
             If Not dtgvCaukien.Columns.Contains("STT") Then
                 Dim sttCol As New DataGridViewTextBoxColumn()
                 sttCol.Name = "STT"
@@ -52,24 +55,25 @@ Public Class MainForm
                 sttCol.ReadOnly = True
                 dtgvCaukien.Columns.Insert(0, sttCol) ' Thêm vào vị trí đầu
             End If
-
-            ' Gán giá trị cho cột STT
             For i As Integer = 0 To dtgvCaukien.Rows.Count - 1
                 dtgvCaukien.Rows(i).Cells("STT").Value = i + 1
             Next
         ElseIf rdbCot.Checked = True Then
+            'Clear va gan data cho dtgv
             dtgvCaukien.DataSource = Nothing
             dtgvCaukien.Rows.Clear()
             dtgvCaukien.Columns.Clear()
             dtgvLoai.DataSource = Nothing
             dtgvLoai.Rows.Clear()
             dtgvLoai.Columns.Clear()
-
-
-
-            dtgvCaukien.DataSource = haha.DSCot
+            Dim hoho As New List(Of cls_CotforDtgv)
+            For Each hihi In haha.DSCot
+                hoho.Add(New cls_CotforDtgv With {.Loai = hihi.Loai.Ten, .DiemDat = hihi.Diemdat})
+            Next
+            dtgvCaukien.DataSource = hoho
 
             dtgvLoai.DataSource = haha.LoaiCot
+            'tao cot moi va Gán giá trị cho cột STT
             If Not dtgvCaukien.Columns.Contains("STT") Then
                 Dim sttCol As New DataGridViewTextBoxColumn()
                 sttCol.Name = "STT"

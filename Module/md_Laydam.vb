@@ -89,8 +89,8 @@ Module md_Laydam
                                          .Trucxet = ha.Ten,
                                          .LechTrucX1 = (ha.Line.StartPoint.X - l1.StartPoint.X),
                                          .LechTrucX2 = (ha.Line.EndPoint.X - l1.EndPoint.X),
-                                         .LechTrucY1 = (ha.Line.StartPoint.Y - l1.StartPoint.Y),
-                                         .LechTrucY2 = (ha.Line.EndPoint.Y - l1.EndPoint.Y)
+                                         .LechTrucY1 = (ha.Line.StartPoint.Y - (l1.StartPoint.Y + l2.StartPoint.Y) / 2),
+                                         .LechTrucY2 = (ha.Line.EndPoint.Y - (l1.EndPoint.Y + l2.EndPoint.Y) / 2)
                                          })
 
             Next
@@ -128,10 +128,10 @@ Module md_Laydam
                 matbang.DSDam.Add(New cls_Dam With {
                                          .Loaidam = haha,
                                          .Trucxet = ha.Ten,
-                                         .LechTrucX1 = (l1.StartPoint.X - ha.Line.StartPoint.X),
-                                         .LechTrucX2 = (l1.EndPoint.X - ha.Line.EndPoint.X),
-                                         .LechTrucY1 = (l1.StartPoint.Y - ha.Line.StartPoint.Y),
-                                         .LechTrucY2 = (l1.EndPoint.Y - ha.Line.EndPoint.Y)
+                                         .LechTrucX1 = (ha.Line.StartPoint.X - (l1.StartPoint.X + l2.StartPoint.X) / 2),
+                                         .LechTrucX2 = (ha.Line.EndPoint.X - (l1.EndPoint.X + l2.EndPoint.X) / 2),
+                                         .LechTrucY1 = (ha.Line.StartPoint.Y - l1.StartPoint.Y),
+                                         .LechTrucY2 = (ha.Line.EndPoint.Y - l1.EndPoint.Y)
                                          })
 
             Next
