@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>GHI CHÚ:
+1.Khi sửa thông tin trong bảng bấm nút sửa để lưu thay đổi
+2.Bấm nút hoàn thành để lưu dữ liệu bản vẽ
+3.Nếu không chọn Layer cho các cấu kiện chương trình sẽ chỉ
+   quét các cấu kiện có Layer: "DAM" , "COT" , "TRUC"</value>
+  </data>
 </root>

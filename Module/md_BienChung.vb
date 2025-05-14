@@ -9,4 +9,8 @@ Module md_BienChung
     Public ed As Editor = doc.Editor
     Public congtrinh As cls_CongTrinh
     Public ppr As PromptSelectionResult
+    Public haha As cls_Matbang
+    Public layerDam As String
+    Public layerCot As String
+    Public layerLuoiTruc As String
 End Module

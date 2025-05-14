@@ -11,7 +11,7 @@ Module md_Laycot
         Using tr As Transaction = db.TransactionManager.StartTransaction()
             For Each selObj As SelectedObject In ppr.Value
                 Dim ent As Entity = TryCast(tr.GetObject(selObj.ObjectId, OpenMode.ForRead), Entity)
-                If TypeOf ent Is BlockReference AndAlso ent.Layer = "COT" Then
+                If TypeOf ent Is BlockReference AndAlso ent.Layer = layerCot Then
                     Cots.Add(DirectCast(ent, BlockReference))
                 End If
             Next
@@ -49,7 +49,6 @@ Module md_Laycot
 
 
             tr.Commit()
-            ed.WriteMessage("Hoàn thành lấy cột")
         End Using
     End Sub
 End Module

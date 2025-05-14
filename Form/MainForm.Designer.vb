@@ -22,124 +22,62 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.lbTang = New System.Windows.Forms.Label()
-        Me.lbCaodo = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.btnMain = New System.Windows.Forms.Button()
-        Me.txtCaoDo = New System.Windows.Forms.TextBox()
-        Me.txtTang = New System.Windows.Forms.TextBox()
-        Me.lbMatbang = New System.Windows.Forms.Label()
-        Me.cbbMatbang = New System.Windows.Forms.ComboBox()
         Me.rdbDam = New System.Windows.Forms.RadioButton()
-        Me.rdbLuoitruc = New System.Windows.Forms.RadioButton()
         Me.rdbCot = New System.Windows.Forms.RadioButton()
         Me.btnLaybanve = New System.Windows.Forms.Button()
-        Me.dtgvLoai = New System.Windows.Forms.DataGridView()
         Me.dtgvCaukien = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        CType(Me.dtgvLoai, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dtgvMatBang = New System.Windows.Forms.DataGridView()
+        Me.btnSua = New System.Windows.Forms.Button()
+        Me.btnXoa = New System.Windows.Forms.Button()
+        Me.dtgvLoai = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.dtgvLayer = New System.Windows.Forms.DataGridView()
+        Me.btnThemLayer = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btnXoaLayer = New System.Windows.Forms.Button()
         CType(Me.dtgvCaukien, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        CType(Me.dtgvMatBang, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtgvLoai, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.dtgvLayer, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'lbTang
-        '
-        Me.lbTang.AutoSize = True
-        Me.lbTang.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.lbTang.Location = New System.Drawing.Point(293, 5)
-        Me.lbTang.Name = "lbTang"
-        Me.lbTang.Size = New System.Drawing.Size(83, 36)
-        Me.lbTang.TabIndex = 8
-        Me.lbTang.Text = "Tầng"
-        '
-        'lbCaodo
-        '
-        Me.lbCaodo.AutoSize = True
-        Me.lbCaodo.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.lbCaodo.Location = New System.Drawing.Point(293, 55)
-        Me.lbCaodo.Name = "lbCaodo"
-        Me.lbCaodo.Size = New System.Drawing.Size(185, 36)
-        Me.lbCaodo.TabIndex = 9
-        Me.lbCaodo.Text = "Cao độ (mm)"
         '
         'btnMain
         '
         Me.btnMain.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.btnMain.Location = New System.Drawing.Point(477, 99)
+        Me.btnMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnMain.Location = New System.Drawing.Point(336, 29)
         Me.btnMain.Name = "btnMain"
-        Me.btnMain.Size = New System.Drawing.Size(107, 36)
+        Me.btnMain.Size = New System.Drawing.Size(84, 33)
         Me.btnMain.TabIndex = 12
         Me.btnMain.Text = "Thêm"
         Me.btnMain.UseVisualStyleBackColor = False
         '
-        'txtCaoDo
-        '
-        Me.txtCaoDo.BackColor = System.Drawing.SystemColors.Info
-        Me.txtCaoDo.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.txtCaoDo.Location = New System.Drawing.Point(477, 52)
-        Me.txtCaoDo.Name = "txtCaoDo"
-        Me.txtCaoDo.Size = New System.Drawing.Size(107, 41)
-        Me.txtCaoDo.TabIndex = 11
-        '
-        'txtTang
-        '
-        Me.txtTang.BackColor = System.Drawing.SystemColors.Info
-        Me.txtTang.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.txtTang.Location = New System.Drawing.Point(477, 5)
-        Me.txtTang.Name = "txtTang"
-        Me.txtTang.Size = New System.Drawing.Size(107, 41)
-        Me.txtTang.TabIndex = 10
-        '
-        'lbMatbang
-        '
-        Me.lbMatbang.AutoSize = True
-        Me.lbMatbang.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.lbMatbang.Location = New System.Drawing.Point(6, 11)
-        Me.lbMatbang.Name = "lbMatbang"
-        Me.lbMatbang.Size = New System.Drawing.Size(112, 29)
-        Me.lbMatbang.TabIndex = 13
-        Me.lbMatbang.Text = "Mặt bằng"
-        '
-        'cbbMatbang
-        '
-        Me.cbbMatbang.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.cbbMatbang.FormattingEnabled = True
-        Me.cbbMatbang.Location = New System.Drawing.Point(124, 8)
-        Me.cbbMatbang.Name = "cbbMatbang"
-        Me.cbbMatbang.Size = New System.Drawing.Size(103, 33)
-        Me.cbbMatbang.TabIndex = 14
-        '
         'rdbDam
         '
         Me.rdbDam.AutoSize = True
-        Me.rdbDam.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.rdbDam.Location = New System.Drawing.Point(10, 152)
+        Me.rdbDam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.rdbDam.Location = New System.Drawing.Point(219, 13)
         Me.rdbDam.Name = "rdbDam"
-        Me.rdbDam.Size = New System.Drawing.Size(74, 29)
+        Me.rdbDam.Size = New System.Drawing.Size(61, 22)
         Me.rdbDam.TabIndex = 15
         Me.rdbDam.TabStop = True
         Me.rdbDam.Text = "Dầm"
         Me.rdbDam.UseVisualStyleBackColor = True
         '
-        'rdbLuoitruc
-        '
-        Me.rdbLuoitruc.AutoSize = True
-        Me.rdbLuoitruc.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.rdbLuoitruc.Location = New System.Drawing.Point(156, 152)
-        Me.rdbLuoitruc.Name = "rdbLuoitruc"
-        Me.rdbLuoitruc.Size = New System.Drawing.Size(107, 29)
-        Me.rdbLuoitruc.TabIndex = 16
-        Me.rdbLuoitruc.TabStop = True
-        Me.rdbLuoitruc.Text = "Lưới trục"
-        Me.rdbLuoitruc.UseVisualStyleBackColor = True
-        '
         'rdbCot
         '
         Me.rdbCot.AutoSize = True
-        Me.rdbCot.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.rdbCot.Location = New System.Drawing.Point(87, 152)
+        Me.rdbCot.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.rdbCot.Location = New System.Drawing.Point(286, 13)
         Me.rdbCot.Name = "rdbCot"
-        Me.rdbCot.Size = New System.Drawing.Size(64, 29)
+        Me.rdbCot.Size = New System.Drawing.Size(53, 22)
         Me.rdbCot.TabIndex = 17
         Me.rdbCot.TabStop = True
         Me.rdbCot.Text = "Cột"
@@ -148,81 +86,189 @@ Partial Class MainForm
         'btnLaybanve
         '
         Me.btnLaybanve.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnLaybanve.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.btnLaybanve.Location = New System.Drawing.Point(283, 147)
+        Me.btnLaybanve.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnLaybanve.Location = New System.Drawing.Point(336, 147)
         Me.btnLaybanve.Name = "btnLaybanve"
-        Me.btnLaybanve.Size = New System.Drawing.Size(158, 36)
+        Me.btnLaybanve.Size = New System.Drawing.Size(84, 87)
         Me.btnLaybanve.TabIndex = 19
         Me.btnLaybanve.Text = "Hoàn thành"
         Me.btnLaybanve.UseVisualStyleBackColor = False
         '
-        'dtgvLoai
-        '
-        Me.dtgvLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgvLoai.Location = New System.Drawing.Point(331, 0)
-        Me.dtgvLoai.Name = "dtgvLoai"
-        Me.dtgvLoai.RowHeadersWidth = 51
-        Me.dtgvLoai.RowTemplate.Height = 24
-        Me.dtgvLoai.Size = New System.Drawing.Size(239, 312)
-        Me.dtgvLoai.TabIndex = 20
-        '
         'dtgvCaukien
         '
         Me.dtgvCaukien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtgvCaukien.Location = New System.Drawing.Point(3, 0)
+        Me.dtgvCaukien.Location = New System.Drawing.Point(6, 41)
         Me.dtgvCaukien.Name = "dtgvCaukien"
         Me.dtgvCaukien.RowHeadersWidth = 51
         Me.dtgvCaukien.RowTemplate.Height = 24
-        Me.dtgvCaukien.Size = New System.Drawing.Size(326, 312)
+        Me.dtgvCaukien.Size = New System.Drawing.Size(333, 362)
         Me.dtgvCaukien.TabIndex = 18
         '
-        'Panel1
+        'dtgvMatBang
         '
-        Me.Panel1.Controls.Add(Me.dtgvCaukien)
-        Me.Panel1.Controls.Add(Me.dtgvLoai)
-        Me.Panel1.Location = New System.Drawing.Point(11, 201)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(573, 312)
-        Me.Panel1.TabIndex = 21
+        Me.dtgvMatBang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgvMatBang.Location = New System.Drawing.Point(20, 29)
+        Me.dtgvMatBang.Name = "dtgvMatBang"
+        Me.dtgvMatBang.RowHeadersWidth = 51
+        Me.dtgvMatBang.RowTemplate.Height = 24
+        Me.dtgvMatBang.Size = New System.Drawing.Size(309, 205)
+        Me.dtgvMatBang.TabIndex = 21
+        '
+        'btnSua
+        '
+        Me.btnSua.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSua.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnSua.Location = New System.Drawing.Point(336, 69)
+        Me.btnSua.Name = "btnSua"
+        Me.btnSua.Size = New System.Drawing.Size(84, 33)
+        Me.btnSua.TabIndex = 22
+        Me.btnSua.Text = "Sửa"
+        Me.btnSua.UseVisualStyleBackColor = False
+        '
+        'btnXoa
+        '
+        Me.btnXoa.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnXoa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnXoa.Location = New System.Drawing.Point(336, 108)
+        Me.btnXoa.Name = "btnXoa"
+        Me.btnXoa.Size = New System.Drawing.Size(84, 33)
+        Me.btnXoa.TabIndex = 23
+        Me.btnXoa.Text = "Xóa"
+        Me.btnXoa.UseVisualStyleBackColor = False
+        '
+        'dtgvLoai
+        '
+        Me.dtgvLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgvLoai.Location = New System.Drawing.Point(6, 409)
+        Me.dtgvLoai.Name = "dtgvLoai"
+        Me.dtgvLoai.RowHeadersWidth = 51
+        Me.dtgvLoai.RowTemplate.Height = 24
+        Me.dtgvLoai.Size = New System.Drawing.Size(333, 133)
+        Me.dtgvLoai.TabIndex = 20
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.GroupBox1.Controls.Add(Me.btnXoa)
+        Me.GroupBox1.Controls.Add(Me.btnSua)
+        Me.GroupBox1.Controls.Add(Me.dtgvMatBang)
+        Me.GroupBox1.Controls.Add(Me.btnLaybanve)
+        Me.GroupBox1.Controls.Add(Me.btnMain)
+        Me.GroupBox1.Location = New System.Drawing.Point(459, 200)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(444, 254)
+        Me.GroupBox1.TabIndex = 24
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Danh sách mặt bằng công trình"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Lime
+        Me.Label1.Location = New System.Drawing.Point(456, 467)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(472, 90)
+        Me.Label1.TabIndex = 25
+        Me.Label1.Text = resources.GetString("Label1.Text")
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.GroupBox2.Controls.Add(Me.btnXoaLayer)
+        Me.GroupBox2.Controls.Add(Me.dtgvLayer)
+        Me.GroupBox2.Controls.Add(Me.btnThemLayer)
+        Me.GroupBox2.Location = New System.Drawing.Point(459, 24)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(444, 170)
+        Me.GroupBox2.TabIndex = 25
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Lấy Layer cấu kiện"
+        '
+        'dtgvLayer
+        '
+        Me.dtgvLayer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtgvLayer.Location = New System.Drawing.Point(20, 31)
+        Me.dtgvLayer.Name = "dtgvLayer"
+        Me.dtgvLayer.RowHeadersWidth = 51
+        Me.dtgvLayer.RowTemplate.Height = 24
+        Me.dtgvLayer.Size = New System.Drawing.Size(309, 133)
+        Me.dtgvLayer.TabIndex = 24
+        '
+        'btnThemLayer
+        '
+        Me.btnThemLayer.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnThemLayer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnThemLayer.Location = New System.Drawing.Point(335, 41)
+        Me.btnThemLayer.Name = "btnThemLayer"
+        Me.btnThemLayer.Size = New System.Drawing.Size(84, 44)
+        Me.btnThemLayer.TabIndex = 24
+        Me.btnThemLayer.Text = "Thêm hoặc Sửa"
+        Me.btnThemLayer.UseVisualStyleBackColor = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.GroupBox3.Controls.Add(Me.dtgvCaukien)
+        Me.GroupBox3.Controls.Add(Me.dtgvLoai)
+        Me.GroupBox3.Controls.Add(Me.rdbCot)
+        Me.GroupBox3.Controls.Add(Me.rdbDam)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 24)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(438, 548)
+        Me.GroupBox3.TabIndex = 26
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Thông tin cấu kiện"
+        '
+        'btnXoaLayer
+        '
+        Me.btnXoaLayer.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnXoaLayer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnXoaLayer.Location = New System.Drawing.Point(336, 102)
+        Me.btnXoaLayer.Name = "btnXoaLayer"
+        Me.btnXoaLayer.Size = New System.Drawing.Size(84, 33)
+        Me.btnXoaLayer.TabIndex = 26
+        Me.btnXoaLayer.Text = "Xóa"
+        Me.btnXoaLayer.UseVisualStyleBackColor = False
         '
         'MainForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(587, 518)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.btnLaybanve)
-        Me.Controls.Add(Me.rdbCot)
-        Me.Controls.Add(Me.rdbLuoitruc)
-        Me.Controls.Add(Me.rdbDam)
-        Me.Controls.Add(Me.cbbMatbang)
-        Me.Controls.Add(Me.lbMatbang)
-        Me.Controls.Add(Me.btnMain)
-        Me.Controls.Add(Me.txtCaoDo)
-        Me.Controls.Add(Me.lbCaodo)
-        Me.Controls.Add(Me.txtTang)
-        Me.Controls.Add(Me.lbTang)
+        Me.ClientSize = New System.Drawing.Size(941, 628)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
         Me.Name = "MainForm"
         Me.Text = "MainForm"
-        CType(Me.dtgvLoai, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtgvCaukien, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
+        CType(Me.dtgvMatBang, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgvLoai, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        CType(Me.dtgvLayer, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lbTang As Windows.Forms.Label
-    Friend WithEvents lbCaodo As Windows.Forms.Label
-    Friend WithEvents txtCaoDo As Windows.Forms.TextBox
-    Friend WithEvents txtTang As Windows.Forms.TextBox
     Friend WithEvents btnMain As Windows.Forms.Button
-    Friend WithEvents lbMatbang As Windows.Forms.Label
-    Friend WithEvents cbbMatbang As Windows.Forms.ComboBox
     Friend WithEvents rdbDam As Windows.Forms.RadioButton
-    Friend WithEvents rdbLuoitruc As Windows.Forms.RadioButton
     Friend WithEvents rdbCot As Windows.Forms.RadioButton
     Friend WithEvents btnLaybanve As Windows.Forms.Button
-    Friend WithEvents dtgvLoai As Windows.Forms.DataGridView
     Friend WithEvents dtgvCaukien As Windows.Forms.DataGridView
-    Friend WithEvents Panel1 As Windows.Forms.Panel
+    Friend WithEvents dtgvMatBang As Windows.Forms.DataGridView
+    Friend WithEvents btnSua As Windows.Forms.Button
+    Friend WithEvents btnXoa As Windows.Forms.Button
+    Friend WithEvents dtgvLoai As Windows.Forms.DataGridView
+    Friend WithEvents GroupBox1 As Windows.Forms.GroupBox
+    Friend WithEvents Label1 As Windows.Forms.Label
+    Friend WithEvents GroupBox2 As Windows.Forms.GroupBox
+    Friend WithEvents dtgvLayer As Windows.Forms.DataGridView
+    Friend WithEvents btnThemLayer As Windows.Forms.Button
+    Friend WithEvents GroupBox3 As Windows.Forms.GroupBox
+    Friend WithEvents btnXoaLayer As Windows.Forms.Button
 End Class

@@ -16,10 +16,8 @@ Module md_Layluoitruc
 
             For Each id As ObjectId In ppr.Value.GetObjectIds()
                 Dim ent As Entity = TryCast(tr.GetObject(id, OpenMode.ForRead), Entity)
-                If TypeOf ent Is Line AndAlso ent.Layer.ToUpper().Contains("TRUC") Then
+                If TypeOf ent Is Line AndAlso ent.Layer.ToUpper().Contains(layerLuoiTruc) Then
                     Dim line As Line = DirectCast(ent, Line)
-
-
                     ' Kiểm tra trục ngang (song song trục X)
                     If Math.Abs(line.StartPoint.Y - line.EndPoint.Y) < 0.001 Then
                         matbang.LuoiTruc.TrucNgang.Add(New cls_TrucNgang With {
@@ -56,7 +54,6 @@ Module md_Layluoitruc
 
             tr.Commit()
         End Using
-        ed.WriteMessage(vbLf & "Xuất dữ liệu lưới trục và điểm giao thành công: ")
     End Sub
 
 
@@ -67,7 +64,7 @@ Module md_Layluoitruc
             Dim ent As Entity = TryCast(tr.GetObject(id, OpenMode.ForRead), Entity)
             If TypeOf ent Is BlockReference Then
                 Dim blkRef As BlockReference = CType(ent, BlockReference)
-                If blkRef.Layer.ToUpper() <> "COT" Then
+                If blkRef.Layer.ToUpper() <> layerCot Then
                     blkRefs.Add(blkRef)
                 End If
             End If

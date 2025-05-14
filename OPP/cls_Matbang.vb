@@ -37,3 +37,11 @@ Public Class cls_Matbang
         LoaiCot = New List(Of cls_LoaiCot)
     End Sub
 End Class
+Public Class MatBangForDtgv
+    Public Property Tang As Integer
+    Public Property CaoDo As Double
+    Public Property TangKT As Integer
+    Public Property CaoDoKT As Double
+    Public Property SoLuongDam As Integer
+    Public Property SoLuongCot As Integer
+End Class
