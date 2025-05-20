@@ -150,6 +150,20 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-add-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square-pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-document.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

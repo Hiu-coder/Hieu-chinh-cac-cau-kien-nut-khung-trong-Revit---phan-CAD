@@ -229,4 +229,8 @@ Public Class MainForm
     Private Sub btnXoa_Click(sender As Object, e As EventArgs) Handles btnXoa.Click
 
     End Sub
+
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

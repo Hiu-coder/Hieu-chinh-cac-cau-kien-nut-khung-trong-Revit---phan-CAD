@@ -23,22 +23,22 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        Me.btnMain = New System.Windows.Forms.Button()
         Me.rdbDam = New System.Windows.Forms.RadioButton()
         Me.rdbCot = New System.Windows.Forms.RadioButton()
         Me.btnLaybanve = New System.Windows.Forms.Button()
         Me.dtgvCaukien = New System.Windows.Forms.DataGridView()
         Me.dtgvMatBang = New System.Windows.Forms.DataGridView()
-        Me.btnSua = New System.Windows.Forms.Button()
-        Me.btnXoa = New System.Windows.Forms.Button()
         Me.dtgvLoai = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnXoaLayer = New System.Windows.Forms.Button()
         Me.dtgvLayer = New System.Windows.Forms.DataGridView()
         Me.btnThemLayer = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.btnXoaLayer = New System.Windows.Forms.Button()
+        Me.btnXoa = New System.Windows.Forms.Button()
+        Me.btnSua = New System.Windows.Forms.Button()
+        Me.btnMain = New System.Windows.Forms.Button()
         CType(Me.dtgvCaukien, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgvMatBang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtgvLoai, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,17 +47,6 @@ Partial Class MainForm
         CType(Me.dtgvLayer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'btnMain
-        '
-        Me.btnMain.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.btnMain.Location = New System.Drawing.Point(336, 29)
-        Me.btnMain.Name = "btnMain"
-        Me.btnMain.Size = New System.Drawing.Size(84, 33)
-        Me.btnMain.TabIndex = 12
-        Me.btnMain.Text = "Thêm"
-        Me.btnMain.UseVisualStyleBackColor = False
         '
         'rdbDam
         '
@@ -96,12 +85,15 @@ Partial Class MainForm
         '
         'dtgvCaukien
         '
+        Me.dtgvCaukien.AllowUserToAddRows = False
+        Me.dtgvCaukien.AllowUserToDeleteRows = False
         Me.dtgvCaukien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgvCaukien.Location = New System.Drawing.Point(6, 41)
         Me.dtgvCaukien.Name = "dtgvCaukien"
+        Me.dtgvCaukien.ReadOnly = True
         Me.dtgvCaukien.RowHeadersWidth = 51
         Me.dtgvCaukien.RowTemplate.Height = 24
-        Me.dtgvCaukien.Size = New System.Drawing.Size(333, 362)
+        Me.dtgvCaukien.Size = New System.Drawing.Size(426, 362)
         Me.dtgvCaukien.TabIndex = 18
         '
         'dtgvMatBang
@@ -114,36 +106,17 @@ Partial Class MainForm
         Me.dtgvMatBang.Size = New System.Drawing.Size(309, 205)
         Me.dtgvMatBang.TabIndex = 21
         '
-        'btnSua
-        '
-        Me.btnSua.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSua.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.btnSua.Location = New System.Drawing.Point(336, 69)
-        Me.btnSua.Name = "btnSua"
-        Me.btnSua.Size = New System.Drawing.Size(84, 33)
-        Me.btnSua.TabIndex = 22
-        Me.btnSua.Text = "Sửa"
-        Me.btnSua.UseVisualStyleBackColor = False
-        '
-        'btnXoa
-        '
-        Me.btnXoa.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnXoa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.btnXoa.Location = New System.Drawing.Point(336, 108)
-        Me.btnXoa.Name = "btnXoa"
-        Me.btnXoa.Size = New System.Drawing.Size(84, 33)
-        Me.btnXoa.TabIndex = 23
-        Me.btnXoa.Text = "Xóa"
-        Me.btnXoa.UseVisualStyleBackColor = False
-        '
         'dtgvLoai
         '
+        Me.dtgvLoai.AllowUserToAddRows = False
+        Me.dtgvLoai.AllowUserToDeleteRows = False
         Me.dtgvLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtgvLoai.Location = New System.Drawing.Point(6, 409)
         Me.dtgvLoai.Name = "dtgvLoai"
+        Me.dtgvLoai.ReadOnly = True
         Me.dtgvLoai.RowHeadersWidth = 51
         Me.dtgvLoai.RowTemplate.Height = 24
-        Me.dtgvLoai.Size = New System.Drawing.Size(333, 133)
+        Me.dtgvLoai.Size = New System.Drawing.Size(426, 133)
         Me.dtgvLoai.TabIndex = 20
         '
         'GroupBox1
@@ -185,6 +158,18 @@ Partial Class MainForm
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Lấy Layer cấu kiện"
         '
+        'btnXoaLayer
+        '
+        Me.btnXoaLayer.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnXoaLayer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnXoaLayer.Location = New System.Drawing.Point(336, 102)
+        Me.btnXoaLayer.Name = "btnXoaLayer"
+        Me.btnXoaLayer.Size = New System.Drawing.Size(84, 33)
+        Me.btnXoaLayer.TabIndex = 26
+        Me.btnXoaLayer.Text = "Xóa"
+        Me.btnXoaLayer.UseVisualStyleBackColor = False
+        Me.btnXoaLayer.Visible = False
+        '
         'dtgvLayer
         '
         Me.dtgvLayer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -220,16 +205,49 @@ Partial Class MainForm
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Thông tin cấu kiện"
         '
-        'btnXoaLayer
+        'btnXoa
         '
-        Me.btnXoaLayer.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnXoaLayer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
-        Me.btnXoaLayer.Location = New System.Drawing.Point(336, 102)
-        Me.btnXoaLayer.Name = "btnXoaLayer"
-        Me.btnXoaLayer.Size = New System.Drawing.Size(84, 33)
-        Me.btnXoaLayer.TabIndex = 26
-        Me.btnXoaLayer.Text = "Xóa"
-        Me.btnXoaLayer.UseVisualStyleBackColor = False
+        Me.btnXoa.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnXoa.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnXoa.Image = Global.LaybanveCAD_ver2.My.Resources.Resources.delete_document
+        Me.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnXoa.Location = New System.Drawing.Point(336, 108)
+        Me.btnXoa.Name = "btnXoa"
+        Me.btnXoa.Size = New System.Drawing.Size(84, 33)
+        Me.btnXoa.TabIndex = 23
+        Me.btnXoa.Text = "Xóa"
+        Me.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnXoa.UseVisualStyleBackColor = False
+        Me.btnXoa.Visible = False
+        '
+        'btnSua
+        '
+        Me.btnSua.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSua.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnSua.Image = Global.LaybanveCAD_ver2.My.Resources.Resources.square_pen
+        Me.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSua.Location = New System.Drawing.Point(336, 69)
+        Me.btnSua.Name = "btnSua"
+        Me.btnSua.Size = New System.Drawing.Size(84, 33)
+        Me.btnSua.TabIndex = 22
+        Me.btnSua.Text = "Sửa"
+        Me.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSua.UseVisualStyleBackColor = True
+        Me.btnSua.Visible = False
+        '
+        'btnMain
+        '
+        Me.btnMain.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(163, Byte))
+        Me.btnMain.Image = Global.LaybanveCAD_ver2.My.Resources.Resources.square_plus
+        Me.btnMain.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnMain.Location = New System.Drawing.Point(336, 29)
+        Me.btnMain.Name = "btnMain"
+        Me.btnMain.Size = New System.Drawing.Size(84, 34)
+        Me.btnMain.TabIndex = 12
+        Me.btnMain.Text = "Thêm"
+        Me.btnMain.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnMain.UseVisualStyleBackColor = False
         '
         'MainForm
         '
